@@ -1,0 +1,169 @@
+﻿@model MilkVitaOrganization.Models.tbl_Issue
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="text-align:center">Issue Sheet</h2><br />
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div style="float:left">
+        <div class="form-group">
+            <label class="control-label col-md-4">Demand No.</label>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.demandQty, new { htmlAttributes = new { @class = "form-control" } })
+            </div><br />
+        </div><br />
+        <div class="form-group">
+            <label class="control-label col-md-4">GRN</label>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.GRN, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div><br />
+        <div class="form-group">
+            <label class="control-label col-md-4">Calan No.</label>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.calanNo, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div><br />
+ </div>
+<div style="float:right">
+    <div class="form-group">
+        <label class="control-label col-md-4">Department:</label>
+          <div class="col-md-8">
+            @Html.DropDownList("departmentId", null, "Select Department", htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div><br />
+    <div class="form-group">
+        <label class="control-label col-md-3">Date: </label> 
+        @DateTime.Now
+    </div>
+</div><br />
+<br />
+<div class="container">
+    <table class="table table-bordered" style="border-collapse:collapse">
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                @*<th>Brand Name</th>
+                <th>Color Name</th>*@
+                <th>Item</th>
+                <th>Demand Qty</th>
+                <th>Receive Qty</th>
+                <th>Issue Qty</th>
+                <th>Unit</th>
+                <th>Price</th>
+                <th>Final Price</th>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>@Html.DropDownList("itemId", null, "Select Item", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.DropDownList("demandQty", null, "Select DemandQty", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.DropDownList("receiveQty", null, "Select ReceiveQty", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.EditorFor(model => model.issueQty, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@Html.DropDownList("unitId", null, "Select Unit", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.EditorFor(model => model.priceId, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" style="background-color: #8d0d82; color:white" value="Create" class="btn btn-default" />
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

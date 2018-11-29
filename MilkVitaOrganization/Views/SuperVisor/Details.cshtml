@@ -1,0 +1,64 @@
+﻿@model MilkVitaOrganization.Models.tbl_ZoneSuperVisor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Zone Super Visor</h2><br />
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empIdNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empIdNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_VanDriverList.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_VanDriverList.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_ZoneList.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_ZoneList.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_ZoneOfficerList.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_ZoneOfficerList.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "SuperVisor")'" class="btn btn-default">Cancel</button>
+</p>

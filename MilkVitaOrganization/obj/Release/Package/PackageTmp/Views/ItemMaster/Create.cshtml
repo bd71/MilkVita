@@ -1,0 +1,130 @@
+﻿@model MilkVitaOrganization.Models.tbl_ItemMaster
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ITEMS</h2><br />
+
+<style type="text/css">
+    #wrap {
+        width: 300px;
+        float:left;
+    }
+
+    #left, #right {
+        /*border: 1px dotted red;*/
+        float: left;
+    }
+
+    #left {
+        width: 250px;
+    }
+
+    #right {
+        width: 50px;
+    }
+    .button {
+        border: none;
+        border-radius: 4px;
+        color: white;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0;
+        font-size: 12px;
+        cursor: pointer;
+        background-color: #8d0d82;
+    }
+</style>
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.code, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(model => model.code, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(model => model.name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+     <div class="form-group">
+        @Html.LabelFor(model => model.categoryId, "Category", new { @class = "control-label col-md-2" })
+        <div id="wrap">
+        <div id="left">
+            @Html.DropDownList("categoryId", null, "--Select Category--", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.categoryId, "", new { @class = "text-danger" })
+        </div>
+        <div id="right">
+            <button type="button" class="btn btn-default btn-sm" style="height: 34px; width: 30px" onclick="location.href='@Url.Action("Create", "Category")'"><span class="glyphicon glyphicon-plus"></span></button>
+        </div>
+        </div>
+     </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.brandId, "Brand", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("brandId", null, "Select Brand", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.brandId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.colorId, "Color", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("colorId", null, "Select Color", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.colorId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.barCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.barCode, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.barCode, "", new { @class = "text-danger" })
+                </div>
+            </div*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" style="background-color:#8d0d82; border:none; color:white" value="Create" class="btn btn-default" />
+                <button type="button" style="background-color:#8d0d82; border:none; color:white" onclick="location.href='@Url.Action("Index", "ItemMaster")'" class="btn btn-default">Cancel</button>
+            </div>
+            @if (ViewBag.message != null)
+            {
+                <script type="text/javascript">
+                            window.onload = function () {
+                                alert("@ViewBag.message");
+                            };
+                </script>
+            }
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

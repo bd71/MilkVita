@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MilkVitaDataSet3" targetNamespace="http://tempuri.org/MilkVitaDataSet3.xsd" xmlns:mstns="http://tempuri.org/MilkVitaDataSet3.xsd" xmlns="http://tempuri.org/MilkVitaDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="MilkVitaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MilkVitaConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.MilkVitaConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwDemandTableAdapter" GeneratorDataComponentClassName="vwDemandTableAdapter" Name="vwDemand" UserDataComponentName="vwDemandTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MilkVitaConnectionString (Web.config)" DbObjectName="MilkVita.dbo.vwDemand" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, demandNo, serialNo, demandQty, Item, dateTime, Unit, Supplier FROM dbo.vwDemand</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="demandNo" DataSetColumn="demandNo" />
+              <Mapping SourceColumn="serialNo" DataSetColumn="serialNo" />
+              <Mapping SourceColumn="demandQty" DataSetColumn="demandQty" />
+              <Mapping SourceColumn="Item" DataSetColumn="Item" />
+              <Mapping SourceColumn="dateTime" DataSetColumn="dateTime" />
+              <Mapping SourceColumn="Unit" DataSetColumn="Unit" />
+              <Mapping SourceColumn="Supplier" DataSetColumn="Supplier" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MilkVitaDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MilkVitaDataSet3" msprop:Generator_UserDSName="MilkVitaDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwDemand" msprop:Generator_TableClassName="vwDemandDataTable" msprop:Generator_TableVarName="tablevwDemand" msprop:Generator_TablePropName="vwDemand" msprop:Generator_RowDeletingName="vwDemandRowDeleting" msprop:Generator_RowChangingName="vwDemandRowChanging" msprop:Generator_RowEvHandlerName="vwDemandRowChangeEventHandler" msprop:Generator_RowDeletedName="vwDemandRowDeleted" msprop:Generator_UserTableName="vwDemand" msprop:Generator_RowChangedName="vwDemandRowChanged" msprop:Generator_RowEvArgName="vwDemandRowChangeEvent" msprop:Generator_RowClassName="vwDemandRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="demandNo" msprop:Generator_ColumnVarNameInTable="columndemandNo" msprop:Generator_ColumnPropNameInRow="demandNo" msprop:Generator_ColumnPropNameInTable="demandNoColumn" msprop:Generator_UserColumnName="demandNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serialNo" msprop:Generator_ColumnVarNameInTable="columnserialNo" msprop:Generator_ColumnPropNameInRow="serialNo" msprop:Generator_ColumnPropNameInTable="serialNoColumn" msprop:Generator_UserColumnName="serialNo" type="xs:int" />
+              <xs:element name="demandQty" msprop:Generator_ColumnVarNameInTable="columndemandQty" msprop:Generator_ColumnPropNameInRow="demandQty" msprop:Generator_ColumnPropNameInTable="demandQtyColumn" msprop:Generator_UserColumnName="demandQty" type="xs:int" />
+              <xs:element name="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnPropNameInTable="ItemColumn" msprop:Generator_UserColumnName="Item" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateTime" msprop:Generator_ColumnVarNameInTable="columndateTime" msprop:Generator_ColumnPropNameInRow="dateTime" msprop:Generator_ColumnPropNameInTable="dateTimeColumn" msprop:Generator_UserColumnName="dateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Unit" msprop:Generator_ColumnVarNameInTable="columnUnit" msprop:Generator_ColumnPropNameInRow="Unit" msprop:Generator_ColumnPropNameInTable="UnitColumn" msprop:Generator_UserColumnName="Unit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supplier" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" msprop:Generator_UserColumnName="Supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vwDemand" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

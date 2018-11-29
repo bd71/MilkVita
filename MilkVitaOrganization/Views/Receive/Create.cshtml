@@ -1,0 +1,114 @@
+﻿@model MilkVitaOrganization.Models.tbl_Receive
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Receive Sheet</h2><br />
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+  
+  
+ <div>
+    <label>Demand No.</label>
+    @Html.EditorFor(model => model.GRN, new { htmlAttributes = new { @class = "form-control" } })
+ </div>
+<div style="float:right">
+    <label>Date: </label>
+    @DateTime.Now
+</div><br />
+<br />
+<div class="container">
+    <table class="table table-bordered" style="border-collapse:collapse">
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th>Item</th>
+                <th>Demand Qty</th>
+                <th>Receive Qty</th>
+                <th>Unit</th>               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>@Html.DropDownList("itemId", null, "Select Item", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.DropDownList("brandId", null, "Select Item", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.DropDownList("colorId", null, "Select Item", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.DropDownList("demandId", null, "Select Demand Qty", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.DropDownList("unitId", null, "Select Unit", htmlAttributes: new { @class = "form-control" })</td>
+                <td>@Html.EditorFor(model => model.receiveQty, new { htmlAttributes = new { @class = "form-control" } })</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" style="background-color: #8d0d82; color:white" value="Create" class="btn btn-default" />
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

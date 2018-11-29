@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+<head style="color: #501165">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Bangladesh Milk Producer Co-Operative Union Limited(Milk Vita)</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+          
+        #wrapper {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #leftcolumn, #rightcolumn {
+            /*border: 1px solid white;*/
+            float: left;
+            
+        }
+
+        #leftcolumn {
+            width: 80%;
+             }
+
+        #rightcolumn {
+            width: 20%;
+            }
+
+        ul li a:hover{
+            color:white;
+        }
+    </style>
+
+</head>
+<body style="background-color:rgba(60, 142, 243, 0.20)">
+    <form>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#LogOut1").click(function (e) {
+                    // use whatever confirm box you want here
+                    if (!window.confirm("Are you sure you want to logout?")) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            //$(function () {
+            //    $("#LogOut1").click(function (event) {
+            //        event.preventDefault();
+            //        $('<div title="Confirm Box"></div>').dialog({
+            //            open: function (event, ui) {
+            //                $(this).html("Yes or No question?");
+            //            },
+            //            close: function () {
+            //                $(this).remove();
+            //            },
+            //           resizable: false,
+            //            height: 140,
+            //            modal: true,
+            //            buttons: {
+            //                'Yes': function () {
+            //                    $(this).dialog('close');
+            //                    $.post('../Registration/Logout');
+
+            //                },
+            //                'No': function () {
+            //                    $(this).dialog('close');
+            //                }
+            //            }
+            //        });
+            //    });
+            //});
+
+        </script>
+    </form>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-image: url('../image/software-banner.jpg')">
+        
+            <div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               </div>
+            
+                    @if (Session["userId"] != null && Session["userId"].ToString() != "")
+                    {
+                      <div class="navbar-collapse collapse" id="navbar-collapse"> 
+                        <div id="wrapper">
+                            <div id="leftcolumn">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="../Home/Index">
+                                            <span style="font-size:25px" class="glyphicon glyphicon-home"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a style="color:red" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Information
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>@Html.ActionLink("Super Visor", "Index", "SuperVisor")</li>
+                                            <li>@Html.ActionLink("Zone Officer", "Index", "ZoneOfficer")</li>
+                                            <li>@Html.ActionLink("Zone", "Index", "Zone")</li>
+                                            <li>@Html.ActionLink("Van Driver", "Index", "VanDriver")</li>
+                                            <li>@Html.ActionLink("Shop", "Index", "Shop")</li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a style="color:red" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Products
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>@Html.ActionLink("Items", "Index", "ItemMaster")</li>
+                                            <li>@Html.ActionLink("Category", "Index", "Category")</li>
+                                            @*<li>@Html.ActionLink("Brand", "Index", "Brand")</li>
+                                            <li>@Html.ActionLink("Color", "Index", "Color")</li>*@
+                                            <li>@Html.ActionLink("Unit", "Index", "Unit")</li>
+                                            <li>@Html.ActionLink("Price", "Index", "Price")</li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a style="color:red" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Agent
+                                            <span class="caret"></span>
+                                        </a>
+                                            <ul class="dropdown-menu">
+                                                <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
+                                                <li>@Html.ActionLink("Supplier", "Index", "Supplier")</li>
+                                                <li>@Html.ActionLink("Department", "Index", "Department")</li>
+                                            </ul>
+                                    </li>
+                                    
+                                    <li class="dropdown">
+                                        <a style="color:red" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Sales
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>@Html.ActionLink("Demand", "Index", "Demand")</li>
+                                            <li>@Html.ActionLink("Delivery", "Index", "Receive")</li>
+                                            <li>@Html.ActionLink("Return", "Index", "Issue")</li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div id="rightcolumn">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a style="color:red" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                            Welcome! @Session["name"].ToString()<br />
+                                            @DateTime.Now
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="glyphicon glyphicon-cog"></span><span style="font-size:15px; font-family:Verdana">Settings</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../Registration/Logout" id="LogOut1">
+                                                    <span class="glyphicon glyphicon-off"></span><span style="font-size:15px; font-family:Verdana" id="LogOut1">Logout</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        @Html.Partial("_LoginPartial")
+                    }
+        </div>
+    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="text-align:center; color:#501165; font-size:10px">
+            <p><b>Copyright &copy; 2014 - @DateTime.Now.Year PlugnPlay Bangladesh. All Rights Reserved.</b></p>
+        </footer>
+    </div>
+
+    @Styles.Render("~/Content/css")
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

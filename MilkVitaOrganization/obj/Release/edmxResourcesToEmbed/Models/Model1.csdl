@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MilkVitaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_ShopList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_VanDriverList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serialNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="zoneId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_ZoneList" Relationship="Self.FK_tbl_VanDriverList_tbl_ZoneList" FromRole="tbl_VanDriverList" ToRole="tbl_ZoneList" />
+    <NavigationProperty Name="tbl_ZoneSuperVisor" Relationship="Self.FK_tbl_ZoneSuperVisor_tbl_VanDriverList" FromRole="tbl_VanDriverList" ToRole="tbl_ZoneSuperVisor" />
+  </EntityType>
+  <EntityType Name="tbl_ZoneList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serialNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="codeNo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_VanDriverList" Relationship="Self.FK_tbl_VanDriverList_tbl_ZoneList" FromRole="tbl_ZoneList" ToRole="tbl_VanDriverList" />
+    <NavigationProperty Name="tbl_ZoneSuperVisor" Relationship="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneList" FromRole="tbl_ZoneList" ToRole="tbl_ZoneSuperVisor" />
+  </EntityType>
+  <EntityType Name="tbl_ZoneOfficerList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serialNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="officersId" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_ZoneSuperVisor" Relationship="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList" FromRole="tbl_ZoneOfficerList" ToRole="tbl_ZoneSuperVisor" />
+  </EntityType>
+  <EntityType Name="tbl_ZoneSuperVisor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="empIdNo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="mobile" Type="Int32" />
+    <Property Name="zoneId" Type="Int32" />
+    <Property Name="zoneOfficerId" Type="Int32" />
+    <Property Name="vanDriverId" Type="Int32" />
+    <NavigationProperty Name="tbl_VanDriverList" Relationship="Self.FK_tbl_ZoneSuperVisor_tbl_VanDriverList" FromRole="tbl_ZoneSuperVisor" ToRole="tbl_VanDriverList" />
+    <NavigationProperty Name="tbl_ZoneList" Relationship="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneList" FromRole="tbl_ZoneSuperVisor" ToRole="tbl_ZoneList" />
+    <NavigationProperty Name="tbl_ZoneOfficerList" Relationship="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList" FromRole="tbl_ZoneSuperVisor" ToRole="tbl_ZoneOfficerList" />
+  </EntityType>
+  <Association Name="FK_tbl_VanDriverList_tbl_ZoneList">
+    <End Role="tbl_ZoneList" Type="Self.tbl_ZoneList" Multiplicity="1" />
+    <End Role="tbl_VanDriverList" Type="Self.tbl_VanDriverList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZoneList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VanDriverList">
+        <PropertyRef Name="zoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZoneSuperVisor_tbl_VanDriverList">
+    <End Role="tbl_VanDriverList" Type="Self.tbl_VanDriverList" Multiplicity="0..1" />
+    <End Role="tbl_ZoneSuperVisor" Type="Self.tbl_ZoneSuperVisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_VanDriverList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ZoneSuperVisor">
+        <PropertyRef Name="vanDriverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZoneSuperVisor_tbl_ZoneList">
+    <End Role="tbl_ZoneList" Type="Self.tbl_ZoneList" Multiplicity="0..1" />
+    <End Role="tbl_ZoneSuperVisor" Type="Self.tbl_ZoneSuperVisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZoneList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ZoneSuperVisor">
+        <PropertyRef Name="zoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList">
+    <End Role="tbl_ZoneOfficerList" Type="Self.tbl_ZoneOfficerList" Multiplicity="0..1" />
+    <End Role="tbl_ZoneSuperVisor" Type="Self.tbl_ZoneSuperVisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZoneOfficerList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ZoneSuperVisor">
+        <PropertyRef Name="zoneOfficerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MilkVitaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tbl_ShopList" EntityType="Self.tbl_ShopList" />
+    <EntitySet Name="tbl_VanDriverList" EntityType="Self.tbl_VanDriverList" />
+    <EntitySet Name="tbl_ZoneList" EntityType="Self.tbl_ZoneList" />
+    <EntitySet Name="tbl_ZoneOfficerList" EntityType="Self.tbl_ZoneOfficerList" />
+    <EntitySet Name="tbl_ZoneSuperVisor" EntityType="Self.tbl_ZoneSuperVisor" />
+    <AssociationSet Name="FK_tbl_VanDriverList_tbl_ZoneList" Association="Self.FK_tbl_VanDriverList_tbl_ZoneList">
+      <End Role="tbl_ZoneList" EntitySet="tbl_ZoneList" />
+      <End Role="tbl_VanDriverList" EntitySet="tbl_VanDriverList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZoneSuperVisor_tbl_VanDriverList" Association="Self.FK_tbl_ZoneSuperVisor_tbl_VanDriverList">
+      <End Role="tbl_VanDriverList" EntitySet="tbl_VanDriverList" />
+      <End Role="tbl_ZoneSuperVisor" EntitySet="tbl_ZoneSuperVisor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZoneSuperVisor_tbl_ZoneList" Association="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneList">
+      <End Role="tbl_ZoneList" EntitySet="tbl_ZoneList" />
+      <End Role="tbl_ZoneSuperVisor" EntitySet="tbl_ZoneSuperVisor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList" Association="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList">
+      <End Role="tbl_ZoneOfficerList" EntitySet="tbl_ZoneOfficerList" />
+      <End Role="tbl_ZoneSuperVisor" EntitySet="tbl_ZoneSuperVisor" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MilkVitaModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MilkVitaModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="tbl_Registration" EntityType="MilkVitaModel.tbl_Registration" />
+    <EntitySet Name="tbl_Brand" EntityType="MilkVitaModel.tbl_Brand" />
+    <EntitySet Name="tbl_Category" EntityType="MilkVitaModel.tbl_Category" />
+    <EntitySet Name="tbl_Color" EntityType="MilkVitaModel.tbl_Color" />
+    <EntitySet Name="tbl_Customer" EntityType="MilkVitaModel.tbl_Customer" />
+    <EntitySet Name="tbl_Demand" EntityType="MilkVitaModel.tbl_Demand" />
+    <EntitySet Name="tbl_Department" EntityType="MilkVitaModel.tbl_Department" />
+    <EntitySet Name="tbl_Issue" EntityType="MilkVitaModel.tbl_Issue" />
+    <EntitySet Name="tbl_ItemMaster" EntityType="MilkVitaModel.tbl_ItemMaster" />
+    <EntitySet Name="tbl_Price" EntityType="MilkVitaModel.tbl_Price" />
+    <EntitySet Name="tbl_Receive" EntityType="MilkVitaModel.tbl_Receive" />
+    <EntitySet Name="tbl_Supplier" EntityType="MilkVitaModel.tbl_Supplier" />
+    <EntitySet Name="tbl_Unit" EntityType="MilkVitaModel.tbl_Unit" />
+    <AssociationSet Name="FK_tbl_Demand_tbl_Brand" Association="MilkVitaModel.FK_tbl_Demand_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Brand" Association="MilkVitaModel.FK_tbl_Issue_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ItemMaster_tbl_Brand" Association="MilkVitaModel.FK_tbl_ItemMaster_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Brand" Association="MilkVitaModel.FK_tbl_Receive_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Category_tbl_Category" Association="MilkVitaModel.FK_tbl_Category_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Category1" EntitySet="tbl_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ItemMaster_tbl_Category" Association="MilkVitaModel.FK_tbl_ItemMaster_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Color" Association="MilkVitaModel.FK_tbl_Demand_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Color" Association="MilkVitaModel.FK_tbl_Issue_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ItemMaster_tbl_Color" Association="MilkVitaModel.FK_tbl_ItemMaster_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Color" Association="MilkVitaModel.FK_tbl_Receive_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_ItemMaster" Association="MilkVitaModel.FK_tbl_Demand_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Supplier" Association="MilkVitaModel.FK_tbl_Demand_tbl_Supplier">
+      <End Role="tbl_Supplier" EntitySet="tbl_Supplier" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Unit" Association="MilkVitaModel.FK_tbl_Demand_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Demand" Association="MilkVitaModel.FK_tbl_Issue_tbl_Demand">
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Demand1" Association="MilkVitaModel.FK_tbl_Issue_tbl_Demand1">
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Demand" Association="MilkVitaModel.FK_tbl_Receive_tbl_Demand">
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Department" Association="MilkVitaModel.FK_tbl_Issue_tbl_Department">
+      <End Role="tbl_Department" EntitySet="tbl_Department" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_ItemMaster" Association="MilkVitaModel.FK_tbl_Issue_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Price" Association="MilkVitaModel.FK_tbl_Issue_tbl_Price">
+      <End Role="tbl_Price" EntitySet="tbl_Price" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Receive" Association="MilkVitaModel.FK_tbl_Issue_tbl_Receive">
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Receive1" Association="MilkVitaModel.FK_tbl_Issue_tbl_Receive1">
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Unit" Association="MilkVitaModel.FK_tbl_Issue_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Price_tbl_ItemMaster" Association="MilkVitaModel.FK_tbl_Price_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Price" EntitySet="tbl_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_ItemMaster" Association="MilkVitaModel.FK_tbl_Receive_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Price_tbl_Unit" Association="MilkVitaModel.FK_tbl_Price_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Price" EntitySet="tbl_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Unit" Association="MilkVitaModel.FK_tbl_Receive_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="tbl_Registration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contact" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="registrationDate" Type="DateTime" Precision="3" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Brand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Brand" FromRole="tbl_Brand" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Brand" FromRole="tbl_Brand" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_ItemMaster_tbl_Brand" FromRole="tbl_Brand" ToRole="tbl_ItemMaster" />
+    <NavigationProperty Name="tbl_Receive" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Brand" FromRole="tbl_Brand" ToRole="tbl_Receive" />
+  </EntityType>
+  <EntityType Name="tbl_Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="categoryId" Type="Int32" />
+    <NavigationProperty Name="tbl_Category1" Relationship="MilkVitaModel.FK_tbl_Category_tbl_Category" FromRole="tbl_Category" ToRole="tbl_Category1" />
+    <NavigationProperty Name="tbl_Category2" Relationship="MilkVitaModel.FK_tbl_Category_tbl_Category" FromRole="tbl_Category1" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_ItemMaster_tbl_Category" FromRole="tbl_Category" ToRole="tbl_ItemMaster" />
+  </EntityType>
+  <EntityType Name="tbl_Color">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Color" FromRole="tbl_Color" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Color" FromRole="tbl_Color" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_ItemMaster_tbl_Color" FromRole="tbl_Color" ToRole="tbl_ItemMaster" />
+    <NavigationProperty Name="tbl_Receive" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Color" FromRole="tbl_Color" ToRole="tbl_Receive" />
+  </EntityType>
+  <EntityType Name="tbl_Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mobile" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Demand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="demandNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="serialNo" Type="Int32" Nullable="false" />
+    <Property Name="itemId" Type="Int32" Nullable="false" />
+    <Property Name="colorId" Type="Int32" />
+    <Property Name="brandId" Type="Int32" Nullable="false" />
+    <Property Name="supplierId" Type="Int32" Nullable="false" />
+    <Property Name="demandQty" Type="Int32" Nullable="false" />
+    <Property Name="unitId" Type="Int32" Nullable="false" />
+    <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tbl_Brand" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Brand" FromRole="tbl_Demand" ToRole="tbl_Brand" />
+    <NavigationProperty Name="tbl_Color" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Color" FromRole="tbl_Demand" ToRole="tbl_Color" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_ItemMaster" FromRole="tbl_Demand" ToRole="tbl_ItemMaster" />
+    <NavigationProperty Name="tbl_Supplier" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Supplier" FromRole="tbl_Demand" ToRole="tbl_Supplier" />
+    <NavigationProperty Name="tbl_Unit" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Unit" FromRole="tbl_Demand" ToRole="tbl_Unit" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Demand" FromRole="tbl_Demand" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_Issue1" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Demand1" FromRole="tbl_Demand" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_Receive" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Demand" FromRole="tbl_Demand" ToRole="tbl_Receive" />
+  </EntityType>
+  <EntityType Name="tbl_Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Department" FromRole="tbl_Department" ToRole="tbl_Issue" />
+  </EntityType>
+  <EntityType Name="tbl_Issue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GRN" Type="Int32" Nullable="false" />
+    <Property Name="demandNo" Type="Int32" Nullable="false" />
+    <Property Name="itemId" Type="Int32" Nullable="false" />
+    <Property Name="brandId" Type="Int32" Nullable="false" />
+    <Property Name="colorId" Type="Int32" />
+    <Property Name="demandQty" Type="Int32" Nullable="false" />
+    <Property Name="receiveQty" Type="Int32" Nullable="false" />
+    <Property Name="issueQty" Type="Int32" Nullable="false" />
+    <Property Name="unitId" Type="Int32" Nullable="false" />
+    <Property Name="priceId" Type="Int32" Nullable="false" />
+    <Property Name="departmentId" Type="Int32" />
+    <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="calanNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Brand" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Brand" FromRole="tbl_Issue" ToRole="tbl_Brand" />
+    <NavigationProperty Name="tbl_Color" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Color" FromRole="tbl_Issue" ToRole="tbl_Color" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Demand" FromRole="tbl_Issue" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Demand1" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Demand1" FromRole="tbl_Issue" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Department" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Department" FromRole="tbl_Issue" ToRole="tbl_Department" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_ItemMaster" FromRole="tbl_Issue" ToRole="tbl_ItemMaster" />
+    <NavigationProperty Name="tbl_Price" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Price" FromRole="tbl_Issue" ToRole="tbl_Price" />
+    <NavigationProperty Name="tbl_Receive" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Receive" FromRole="tbl_Issue" ToRole="tbl_Receive" />
+    <NavigationProperty Name="tbl_Receive1" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Receive1" FromRole="tbl_Issue" ToRole="tbl_Receive" />
+    <NavigationProperty Name="tbl_Unit" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Unit" FromRole="tbl_Issue" ToRole="tbl_Unit" />
+  </EntityType>
+  <EntityType Name="tbl_ItemMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="categoryId" Type="Int32" />
+    <Property Name="brandId" Type="Int32" />
+    <Property Name="colorId" Type="Int32" />
+    <Property Name="barCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_Brand" Relationship="MilkVitaModel.FK_tbl_ItemMaster_tbl_Brand" FromRole="tbl_ItemMaster" ToRole="tbl_Brand" />
+    <NavigationProperty Name="tbl_Category" Relationship="MilkVitaModel.FK_tbl_ItemMaster_tbl_Category" FromRole="tbl_ItemMaster" ToRole="tbl_Category" />
+    <NavigationProperty Name="tbl_Color" Relationship="MilkVitaModel.FK_tbl_ItemMaster_tbl_Color" FromRole="tbl_ItemMaster" ToRole="tbl_Color" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_ItemMaster" FromRole="tbl_ItemMaster" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_ItemMaster" FromRole="tbl_ItemMaster" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_Price" Relationship="MilkVitaModel.FK_tbl_Price_tbl_ItemMaster" FromRole="tbl_ItemMaster" ToRole="tbl_Price" />
+    <NavigationProperty Name="tbl_Receive" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_ItemMaster" FromRole="tbl_ItemMaster" ToRole="tbl_Receive" />
+  </EntityType>
+  <EntityType Name="tbl_Price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unitId" Type="Int32" Nullable="false" />
+    <Property Name="itemMasterId" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Price" FromRole="tbl_Price" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_Price_tbl_ItemMaster" FromRole="tbl_Price" ToRole="tbl_ItemMaster" />
+    <NavigationProperty Name="tbl_Unit" Relationship="MilkVitaModel.FK_tbl_Price_tbl_Unit" FromRole="tbl_Price" ToRole="tbl_Unit" />
+  </EntityType>
+  <EntityType Name="tbl_Receive">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="receiveNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GRN" Type="Int32" Nullable="false" />
+    <Property Name="serialNo" Type="Int32" Nullable="false" />
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="brandId" Type="Int32" Nullable="false" />
+    <Property Name="colorId" Type="Int32" />
+    <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="demandId" Type="Int32" Nullable="false" />
+    <Property Name="receiveQty" Type="Int32" Nullable="false" />
+    <Property Name="unitId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Brand" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Brand" FromRole="tbl_Receive" ToRole="tbl_Brand" />
+    <NavigationProperty Name="tbl_Color" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Color" FromRole="tbl_Receive" ToRole="tbl_Color" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Demand" FromRole="tbl_Receive" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Receive" FromRole="tbl_Receive" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_Issue1" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Receive1" FromRole="tbl_Receive" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_ItemMaster" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_ItemMaster" FromRole="tbl_Receive" ToRole="tbl_ItemMaster" />
+    <NavigationProperty Name="tbl_Unit" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Unit" FromRole="tbl_Receive" ToRole="tbl_Unit" />
+  </EntityType>
+  <EntityType Name="tbl_Supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mobile" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Supplier" FromRole="tbl_Supplier" ToRole="tbl_Demand" />
+  </EntityType>
+  <EntityType Name="tbl_Unit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shortCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="convertParameter" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Demand" Relationship="MilkVitaModel.FK_tbl_Demand_tbl_Unit" FromRole="tbl_Unit" ToRole="tbl_Demand" />
+    <NavigationProperty Name="tbl_Issue" Relationship="MilkVitaModel.FK_tbl_Issue_tbl_Unit" FromRole="tbl_Unit" ToRole="tbl_Issue" />
+    <NavigationProperty Name="tbl_Price" Relationship="MilkVitaModel.FK_tbl_Price_tbl_Unit" FromRole="tbl_Unit" ToRole="tbl_Price" />
+    <NavigationProperty Name="tbl_Receive" Relationship="MilkVitaModel.FK_tbl_Receive_tbl_Unit" FromRole="tbl_Unit" ToRole="tbl_Receive" />
+  </EntityType>
+  <Association Name="FK_tbl_Demand_tbl_Brand">
+    <End Type="MilkVitaModel.tbl_Brand" Role="tbl_Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Brand">
+    <End Type="MilkVitaModel.tbl_Brand" Role="tbl_Brand" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ItemMaster_tbl_Brand">
+    <End Type="MilkVitaModel.tbl_Brand" Role="tbl_Brand" Multiplicity="0..1" />
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ItemMaster">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Brand">
+    <End Type="MilkVitaModel.tbl_Brand" Role="tbl_Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Category_tbl_Category">
+    <End Type="MilkVitaModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="MilkVitaModel.tbl_Category" Role="tbl_Category1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Category1">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ItemMaster_tbl_Category">
+    <End Type="MilkVitaModel.tbl_Category" Role="tbl_Category" Multiplicity="0..1" />
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ItemMaster">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Color">
+    <End Type="MilkVitaModel.tbl_Color" Role="tbl_Color" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Color">
+    <End Type="MilkVitaModel.tbl_Color" Role="tbl_Color" Multiplicity="0..1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ItemMaster_tbl_Color">
+    <End Type="MilkVitaModel.tbl_Color" Role="tbl_Color" Multiplicity="0..1" />
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ItemMaster">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Color">
+    <End Type="MilkVitaModel.tbl_Color" Role="tbl_Color" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_ItemMaster">
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="itemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Supplier">
+    <End Type="MilkVitaModel.tbl_Supplier" Role="tbl_Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Supplier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="supplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Unit">
+    <End Type="MilkVitaModel.tbl_Unit" Role="tbl_Unit" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Demand">
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Demand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="demandNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Demand1">
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Demand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="demandQty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Demand">
+    <End Type="MilkVitaModel.tbl_Demand" Role="tbl_Demand" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Demand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="demandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Department">
+    <End Type="MilkVitaModel.tbl_Department" Role="tbl_Department" Multiplicity="0..1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_ItemMaster">
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="itemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Price">
+    <End Type="MilkVitaModel.tbl_Price" Role="tbl_Price" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Price">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="priceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Receive">
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Receive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="GRN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Receive1">
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Receive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="receiveQty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Unit">
+    <End Type="MilkVitaModel.tbl_Unit" Role="tbl_Unit" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Issue" Role="tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Price_tbl_ItemMaster">
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Price" Role="tbl_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Price">
+        <PropertyRef Name="itemMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_ItemMaster">
+    <End Type="MilkVitaModel.tbl_ItemMaster" Role="tbl_ItemMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Price_tbl_Unit">
+    <End Type="MilkVitaModel.tbl_Unit" Role="tbl_Unit" Multiplicity="1" />
+    <End Type="MilkVitaModel.tbl_Price" Role="tbl_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Price">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Unit">
+    <End Type="MilkVitaModel.tbl_Unit" Role="tbl_Unit" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MilkVitaModel.tbl_Receive" Role="tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

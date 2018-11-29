@@ -1,0 +1,26 @@
+﻿@model MilkVitaOrganization.Models.tbl_Department
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Department Details</h2><br />
+
+<div>
+    <h4>Department</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "Department")'" class="btn btn-default">Cancel</button>
+</p>

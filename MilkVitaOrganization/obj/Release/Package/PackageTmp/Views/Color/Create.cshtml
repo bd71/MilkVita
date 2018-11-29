@@ -1,0 +1,60 @@
+﻿@model MilkVitaOrganization.Models.tbl_Color
+
+    @{
+        ViewBag.Title = "Create";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <!DOCTYPE html>
+     <html>
+    <head>
+        <title></title>
+        <style type="text/css">
+            fieldset {
+                border: none; /* Removes the default border */
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+    <fieldset>
+        <legend>Color</legend>
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.name)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.name)
+            </div>
+            <br />
+
+            <p>
+
+                <input type="submit" style="background-color: #8d0d82; border: none; color: white" value="Create" class="btn btn-default" />
+                <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "Color")'" class="btn btn-default">Cancel</button>
+
+                @if (ViewBag.message != null)
+                {
+                    <script type="text/javascript">
+                        window.onload = function () {
+                            alert("@ViewBag.message");
+                        };
+                    </script>
+                }
+            </p>
+        }
+        </fieldset>
+    </body>
+    </html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/css")
+}

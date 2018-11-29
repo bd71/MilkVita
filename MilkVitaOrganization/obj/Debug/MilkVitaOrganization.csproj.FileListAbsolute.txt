@@ -1,0 +1,394 @@
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Owin.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\WebGrease.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+c:\users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+C:\Users\user\documents\visual studio 2013\Projects\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojResolveAssemblyReference.cache
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Owin.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\WebGrease.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojResolveAssemblyReference.cache
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+D:\Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Owin.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\WebGrease.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojResolveAssemblyReference.cache
+E:\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+E:\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Owin.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\WebGrease.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojResolveAssemblyReference.cache
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+E:\Office\12-05-18\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Owin.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\WebGrease.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\RdlCompile.cache
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\RdlCompile.compiled
+D:\Final Project\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojResolveAssemblyReference.cache
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Owin.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\WebGrease.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Helpers.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Mvc.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Optimization.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.Razor.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojAssemblyReference.cache
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csproj.CoreCompileInputs.cache
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csproj.CopyComplete
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+E:\TitoProjects\ResourceFromTito\MilkVitaOrganization\MilkVitaOrganization\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\MilkVitaOrganization.dll.config
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\MilkVitaOrganization.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\MilkVitaOrganization.pdb
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Antlr3.Runtime.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\EntityFramework.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\EntityFramework.SqlServer.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.ReportViewer.WebForms.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Web.Infrastructure.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Newtonsoft.Json.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Owin.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Helpers.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Mvc.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Optimization.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Razor.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.WebPages.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.WebPages.Razor.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\WebGrease.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.ReportViewer.Common.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.ReportViewer.WebForms.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Helpers.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Mvc.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Optimization.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.Razor.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.WebPages.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.WebPages.Deployment.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\System.Web.WebPages.Razor.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Newtonsoft.Json.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Antlr3.Runtime.pdb
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\EntityFramework.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\EntityFramework.SqlServer.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Core.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Facebook.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Cookies.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.OAuth.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Google.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.Twitter.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csproj.CoreCompileInputs.cache
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csproj.CopyComplete
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.dll
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.pdb
+G:\TheGitCloning\Projects\MilkVita\MilkVitaOrganization\obj\Debug\MilkVitaOrganization.csprojAssemblyReference.cache

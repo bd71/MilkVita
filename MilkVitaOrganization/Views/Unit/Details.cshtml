@@ -1,0 +1,40 @@
+﻿@model MilkVitaOrganization.Models.tbl_Unit
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Unit Details</h2><br />
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shortCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shortCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.convertParameter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.convertParameter)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "Unit")'" class="btn btn-default">Cancel</button>
+</p>

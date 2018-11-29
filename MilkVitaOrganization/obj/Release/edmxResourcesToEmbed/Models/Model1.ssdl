@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MilkVitaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbl_Brand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="15" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="categoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Color">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="15" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Demand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="demandNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="serialNo" Type="int" Nullable="false" />
+    <Property Name="itemId" Type="int" Nullable="false" />
+    <Property Name="colorId" Type="int" />
+    <Property Name="brandId" Type="int" Nullable="false" />
+    <Property Name="supplierId" Type="int" Nullable="false" />
+    <Property Name="demandQty" Type="int" Nullable="false" />
+    <Property Name="unitId" Type="int" Nullable="false" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Issue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GRN" Type="int" Nullable="false" />
+    <Property Name="demandNo" Type="int" Nullable="false" />
+    <Property Name="itemId" Type="int" Nullable="false" />
+    <Property Name="brandId" Type="int" Nullable="false" />
+    <Property Name="colorId" Type="int" />
+    <Property Name="demandQty" Type="int" Nullable="false" />
+    <Property Name="receiveQty" Type="int" Nullable="false" />
+    <Property Name="issueQty" Type="int" Nullable="false" />
+    <Property Name="unitId" Type="int" Nullable="false" />
+    <Property Name="priceId" Type="int" Nullable="false" />
+    <Property Name="departmentId" Type="int" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+    <Property Name="calanNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ItemMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="15" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="categoryId" Type="int" />
+    <Property Name="brandId" Type="int" />
+    <Property Name="colorId" Type="int" />
+    <Property Name="barCode" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="unitId" Type="int" Nullable="false" />
+    <Property Name="itemMasterId" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Receive">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="receiveNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GRN" Type="int" Nullable="false" />
+    <Property Name="serialNo" Type="int" Nullable="false" />
+    <Property Name="ItemId" Type="int" Nullable="false" />
+    <Property Name="brandId" Type="int" Nullable="false" />
+    <Property Name="colorId" Type="int" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+    <Property Name="demandId" Type="int" Nullable="false" />
+    <Property Name="receiveQty" Type="int" Nullable="false" />
+    <Property Name="unitId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Registration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="registrationDate" Type="datetime" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_ShopList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="15" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Unit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shortCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="convertParameter" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_VanDriverList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serialNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="zoneId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ZoneList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serialNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="codeNo" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ZoneOfficerList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serialNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="officersId" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="tbl_ZoneSuperVisor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="empIdNo" Type="varchar" MaxLength="12" />
+    <Property Name="mobile" Type="int" />
+    <Property Name="zoneId" Type="int" />
+    <Property Name="zoneOfficerId" Type="int" />
+    <Property Name="vanDriverId" Type="int" />
+  </EntityType>
+  <Association Name="FK_tbl_Category_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_Category1" Type="Self.tbl_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Category1">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Brand">
+    <End Role="tbl_Brand" Type="Self.tbl_Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Color">
+    <End Role="tbl_Color" Type="Self.tbl_Color" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_ItemMaster">
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="itemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Supplier">
+    <End Role="tbl_Supplier" Type="Self.tbl_Supplier" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Supplier">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="supplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Demand_tbl_Unit">
+    <End Role="tbl_Unit" Type="Self.tbl_Unit" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Demand">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Brand">
+    <End Role="tbl_Brand" Type="Self.tbl_Brand" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Color">
+    <End Role="tbl_Color" Type="Self.tbl_Color" Multiplicity="0..1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Demand">
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Demand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="demandNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Demand1">
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Demand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="demandQty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Department">
+    <End Role="tbl_Department" Type="Self.tbl_Department" Multiplicity="0..1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Department">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_ItemMaster">
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="itemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Price">
+    <End Role="tbl_Price" Type="Self.tbl_Price" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Price">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="priceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Receive">
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Receive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="GRN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Receive1">
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Receive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="receiveQty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Issue_tbl_Unit">
+    <End Role="tbl_Unit" Type="Self.tbl_Unit" Multiplicity="1" />
+    <End Role="tbl_Issue" Type="Self.tbl_Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Issue">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ItemMaster_tbl_Brand">
+    <End Role="tbl_Brand" Type="Self.tbl_Brand" Multiplicity="0..1" />
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ItemMaster">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ItemMaster_tbl_Category">
+    <End Role="tbl_Category" Type="Self.tbl_Category" Multiplicity="0..1" />
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ItemMaster">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ItemMaster_tbl_Color">
+    <End Role="tbl_Color" Type="Self.tbl_Color" Multiplicity="0..1" />
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ItemMaster">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Price_tbl_ItemMaster">
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="1" />
+    <End Role="tbl_Price" Type="Self.tbl_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Price">
+        <PropertyRef Name="itemMasterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Price_tbl_Unit">
+    <End Role="tbl_Unit" Type="Self.tbl_Unit" Multiplicity="1" />
+    <End Role="tbl_Price" Type="Self.tbl_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Price">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Brand">
+    <End Role="tbl_Brand" Type="Self.tbl_Brand" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Brand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Color">
+    <End Role="tbl_Color" Type="Self.tbl_Color" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Color">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Demand">
+    <End Role="tbl_Demand" Type="Self.tbl_Demand" Multiplicity="1" />
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Demand">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="demandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_ItemMaster">
+    <End Role="tbl_ItemMaster" Type="Self.tbl_ItemMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ItemMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Receive_tbl_Unit">
+    <End Role="tbl_Unit" Type="Self.tbl_Unit" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_Receive" Type="Self.tbl_Receive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Unit">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_Receive">
+        <PropertyRef Name="unitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_VanDriverList_tbl_ZoneList">
+    <End Role="tbl_ZoneList" Type="Self.tbl_ZoneList" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_VanDriverList" Type="Self.tbl_VanDriverList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZoneList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_VanDriverList">
+        <PropertyRef Name="zoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZoneSuperVisor_tbl_VanDriverList">
+    <End Role="tbl_VanDriverList" Type="Self.tbl_VanDriverList" Multiplicity="0..1" />
+    <End Role="tbl_ZoneSuperVisor" Type="Self.tbl_ZoneSuperVisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_VanDriverList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ZoneSuperVisor">
+        <PropertyRef Name="vanDriverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZoneSuperVisor_tbl_ZoneList">
+    <End Role="tbl_ZoneList" Type="Self.tbl_ZoneList" Multiplicity="0..1" />
+    <End Role="tbl_ZoneSuperVisor" Type="Self.tbl_ZoneSuperVisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZoneList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ZoneSuperVisor">
+        <PropertyRef Name="zoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList">
+    <End Role="tbl_ZoneOfficerList" Type="Self.tbl_ZoneOfficerList" Multiplicity="0..1" />
+    <End Role="tbl_ZoneSuperVisor" Type="Self.tbl_ZoneSuperVisor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ZoneOfficerList">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_ZoneSuperVisor">
+        <PropertyRef Name="zoneOfficerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="MilkVitaModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Brand" EntityType="Self.tbl_Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Category" EntityType="Self.tbl_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Color" EntityType="Self.tbl_Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Demand" EntityType="Self.tbl_Demand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Department" EntityType="Self.tbl_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Issue" EntityType="Self.tbl_Issue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ItemMaster" EntityType="Self.tbl_ItemMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Price" EntityType="Self.tbl_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Receive" EntityType="Self.tbl_Receive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Registration" EntityType="Self.tbl_Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ShopList" EntityType="Self.tbl_ShopList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Supplier" EntityType="Self.tbl_Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Unit" EntityType="Self.tbl_Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_VanDriverList" EntityType="Self.tbl_VanDriverList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ZoneList" EntityType="Self.tbl_ZoneList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ZoneOfficerList" EntityType="Self.tbl_ZoneOfficerList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ZoneSuperVisor" EntityType="Self.tbl_ZoneSuperVisor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_Category_tbl_Category" Association="Self.FK_tbl_Category_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_Category1" EntitySet="tbl_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Brand" Association="Self.FK_tbl_Demand_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Color" Association="Self.FK_tbl_Demand_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_ItemMaster" Association="Self.FK_tbl_Demand_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Supplier" Association="Self.FK_tbl_Demand_tbl_Supplier">
+      <End Role="tbl_Supplier" EntitySet="tbl_Supplier" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Demand_tbl_Unit" Association="Self.FK_tbl_Demand_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Brand" Association="Self.FK_tbl_Issue_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Color" Association="Self.FK_tbl_Issue_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Demand" Association="Self.FK_tbl_Issue_tbl_Demand">
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Demand1" Association="Self.FK_tbl_Issue_tbl_Demand1">
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Department" Association="Self.FK_tbl_Issue_tbl_Department">
+      <End Role="tbl_Department" EntitySet="tbl_Department" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_ItemMaster" Association="Self.FK_tbl_Issue_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Price" Association="Self.FK_tbl_Issue_tbl_Price">
+      <End Role="tbl_Price" EntitySet="tbl_Price" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Receive" Association="Self.FK_tbl_Issue_tbl_Receive">
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Receive1" Association="Self.FK_tbl_Issue_tbl_Receive1">
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Issue_tbl_Unit" Association="Self.FK_tbl_Issue_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Issue" EntitySet="tbl_Issue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ItemMaster_tbl_Brand" Association="Self.FK_tbl_ItemMaster_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ItemMaster_tbl_Category" Association="Self.FK_tbl_ItemMaster_tbl_Category">
+      <End Role="tbl_Category" EntitySet="tbl_Category" />
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ItemMaster_tbl_Color" Association="Self.FK_tbl_ItemMaster_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Price_tbl_ItemMaster" Association="Self.FK_tbl_Price_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Price" EntitySet="tbl_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Price_tbl_Unit" Association="Self.FK_tbl_Price_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Price" EntitySet="tbl_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Brand" Association="Self.FK_tbl_Receive_tbl_Brand">
+      <End Role="tbl_Brand" EntitySet="tbl_Brand" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Color" Association="Self.FK_tbl_Receive_tbl_Color">
+      <End Role="tbl_Color" EntitySet="tbl_Color" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Demand" Association="Self.FK_tbl_Receive_tbl_Demand">
+      <End Role="tbl_Demand" EntitySet="tbl_Demand" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_ItemMaster" Association="Self.FK_tbl_Receive_tbl_ItemMaster">
+      <End Role="tbl_ItemMaster" EntitySet="tbl_ItemMaster" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Receive_tbl_Unit" Association="Self.FK_tbl_Receive_tbl_Unit">
+      <End Role="tbl_Unit" EntitySet="tbl_Unit" />
+      <End Role="tbl_Receive" EntitySet="tbl_Receive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_VanDriverList_tbl_ZoneList" Association="Self.FK_tbl_VanDriverList_tbl_ZoneList">
+      <End Role="tbl_ZoneList" EntitySet="tbl_ZoneList" />
+      <End Role="tbl_VanDriverList" EntitySet="tbl_VanDriverList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZoneSuperVisor_tbl_VanDriverList" Association="Self.FK_tbl_ZoneSuperVisor_tbl_VanDriverList">
+      <End Role="tbl_VanDriverList" EntitySet="tbl_VanDriverList" />
+      <End Role="tbl_ZoneSuperVisor" EntitySet="tbl_ZoneSuperVisor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZoneSuperVisor_tbl_ZoneList" Association="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneList">
+      <End Role="tbl_ZoneList" EntitySet="tbl_ZoneList" />
+      <End Role="tbl_ZoneSuperVisor" EntitySet="tbl_ZoneSuperVisor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList" Association="Self.FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList">
+      <End Role="tbl_ZoneOfficerList" EntitySet="tbl_ZoneOfficerList" />
+      <End Role="tbl_ZoneSuperVisor" EntitySet="tbl_ZoneSuperVisor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

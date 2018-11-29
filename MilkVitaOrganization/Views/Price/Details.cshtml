@@ -1,0 +1,40 @@
+﻿@model MilkVitaOrganization.Models.tbl_Price
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Price Details</h2><br />
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_ItemMaster.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_ItemMaster.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Unit.shortCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Unit.shortCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "Price")'" class="btn btn-default">Cancel</button>
+</p>

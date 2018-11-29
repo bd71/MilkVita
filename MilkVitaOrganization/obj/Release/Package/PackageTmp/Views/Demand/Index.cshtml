@@ -1,0 +1,509 @@
+﻿@model IEnumerable<MilkVitaOrganization.Models.tbl_Demand>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+
+<!--jQuery dependencies-->
+
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+
+<!--PQ Grid files-->
+<link rel="stylesheet" href="~/Content/pqgrid.min.css" />
+<script src="~/Scripts/pqgrid.min.js"></script>
+<!--PQ Grid Office theme-->
+<link rel="stylesheet" href="~/Content/themes/Office/pqgrid.css" />
+
+
+
+<style type="text/css">
+    div.pq-grid * {
+        font-size: 12px;
+    }
+
+    button.delete_btn {
+        margin: -2px 0px;
+    }
+
+    button.edit_btn {
+        margin: -3px 0px;
+    }
+
+    tr.pq-grid-row td {
+        color: #888;
+    }
+
+    tr.pq-row-edit > td {
+        color: #000;
+    }
+
+    tr.pq-row-delete {
+        text-decoration: line-through;
+    }
+
+        tr.pq-row-delete td {
+            background-color: pink;
+        }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+
+        /// U have to call controller method for fetching desire list
+        // by ajax
+        
+        var items = [];
+
+        $.ajax({
+            type: "GET",
+            url: "/Demand/GetItem",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+           
+                if (data != null) {
+                    items = data.myList;
+                } else {
+                    alert("Something went wrong");
+                }
+            },
+            failure: function (data) {
+                alert(data.responseText);
+            },
+            error: function (data) {
+                alert(data.responseText);
+            }
+        });
+
+        var vUnit = [];
+
+        $.ajax({
+            type: "GET",
+            url: "/Demand/GetUnit",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+          
+                if (data != null) {
+                    vUnit = data.myList;
+                } else {
+                    alert("Something went wrong");
+                }
+            },
+            failure: function (data) {
+                alert(data.responseText);
+            },
+            error: function (data) {
+                alert(data.responseText);
+            }
+        });
+
+        var vSupplier = [];
+
+        $.ajax({
+            type: "GET",
+            url: "/Demand/GetSupplier",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+           
+                if (data != null) {
+                    vSupplier = data.myList;
+                } else {
+                    alert("Something went wrong");
+                }
+            },
+            failure: function (data) {
+                alert(data.responseText);
+            },
+            error: function (data) {
+                alert(data.responseText);
+            }
+        });
+
+        var vGetItemList = function (ui) {
+            var $inp = ui.$cell.find("input");
+
+            //initialize the editor
+            $inp.autocomplete({
+                appendTo: ui.$cell, //for grid in maximized state.
+                //source: (ui.dataIndx == "books" ? books : "/Grid/getCountries"),
+                source: (items),
+
+                selectItem: { on: true }, //custom option
+                highlightText: { on: true }, //custom option
+                minLength: 0
+            }).focus(function () {
+                //open the autocomplete upon focus
+                $(this).autocomplete("search", "");
+            });
+        }
+
+        var vGetUnitList = function (ui) {
+            var $inp = ui.$cell.find("input");
+
+            //initialize the editor
+            $inp.autocomplete({
+                appendTo: ui.$cell, //for grid in maximized state.
+                //source: (ui.dataIndx == "books" ? books : "/Grid/getCountries"),
+                source: (vUnit),
+
+                selectItem: { on: true }, //custom option
+                highlightText: { on: true }, //custom option
+                minLength: 0
+            }).focus(function () {
+                //open the autocomplete upon focus
+                $(this).autocomplete("search", "");
+            });
+        }
+
+        var vGetSupplierList = function (ui) {
+            var $inp = ui.$cell.find("input");
+
+            //initialize the editor
+            $inp.autocomplete({
+                appendTo: ui.$cell, //for grid in maximized state.
+                //source: (ui.dataIndx == "books" ? books : "/Grid/getCountries"),
+                source: (vSupplier),
+
+                selectItem: { on: true }, //custom option
+                highlightText: { on: true }, //custom option
+                minLength: 0
+            }).focus(function () {
+                //open the autocomplete upon focus
+                $(this).autocomplete("search", "");
+            });
+        }
+       
+
+        //define common ajax object for addition, update and delete.
+        var ajaxObj = {
+           
+            dataType: "JSON",
+            beforeSend: function () {
+                this.pqGrid("showLoading");
+            },
+            complete: function () {
+                this.pqGrid("hideLoading");
+            },
+            error: function () {
+                this.pqGrid("rollback");
+            }
+        };
+
+        
+        //to check whether any row is currently being edited.
+        function isEditing($grid) {
+            var rows = $grid.pqGrid("getRowsByClass", { cls: 'pq-row-edit' });
+            if (rows.length > 0) {
+                var rowIndx = rows[0].rowIndx;
+                $grid.pqGrid("goToPage", { rowIndx: rowIndx });
+                //focus on editor if any
+                $grid.pqGrid("editFirstCellInRow", { rowIndx: rowIndx });
+                return true;
+            }
+            return false;
+        }
+        //called by add button in toolbar.
+        function addRow($grid) {
+            if (isEditing($grid)) {
+                return false;
+            }
+            //append empty row in the first row.
+            var rowData = {itemId: "", unitId: "", demandQty: 0, supplierId: "" }; //empty row template
+            $grid.pqGrid("addRow", { rowIndxPage: 0, rowData: rowData });
+
+            var $tr = $grid.pqGrid("getRow", { rowIndxPage: 0 });
+            if ($tr) {
+                //simulate click on edit button.
+                $tr.find("button.edit_btn").click();
+            }
+        }
+        //called by delete button.
+        function deleteRow(rowIndx, $grid) {
+            $grid.pqGrid("addClass", { rowIndx: rowIndx, cls: 'pq-row-delete' });
+            var rowData = $grid.pqGrid("getRowData", { rowIndx: rowIndx });
+            var ans = window.confirm("Are you sure to delete row No " + (rowIndx + 1) + "?");
+
+            if (ans) {
+                var id = $grid.pqGrid("getRecId", { rowIndx: rowIndx });
+                $grid.pqGrid("deleteRow", { rowIndx: rowIndx });
+
+                $.ajax($.extend({}, ajaxObj, {
+                    context: $grid,
+
+                    url: "/Demand/delete",
+
+                    //url: "/pro/products/delete", //for ASP.NET, java
+                    //url: "/pro/products.php?pq_delete=1",//for PHP
+                    data: { id: id },
+                    success: function () {
+                        this.pqGrid("commit");
+                        this.pqGrid("refreshDataAndView");
+                    },
+                    error: function () {
+                        //debugger;
+                        this.pqGrid("removeClass", { rowData: rowData, cls: 'pq-row-delete' });
+                        this.pqGrid("rollback");
+                    }
+                }));
+            }
+            else {
+                $grid.pqGrid("removeClass", { rowIndx: rowIndx, cls: 'pq-row-delete' });
+            }
+        }
+        //called by edit button.
+        function editRow(rowIndx, $grid) {
+            $grid.pqGrid("addClass", { rowIndx: rowIndx, cls: 'pq-row-edit' });
+            $grid.pqGrid("editFirstCellInRow", { rowIndx: rowIndx });
+
+            //change edit button to update button and delete to cancel.
+            var $tr = $grid.pqGrid("getRow", { rowIndx: rowIndx }),
+                $btn = $tr.find("button.edit_btn");
+            $btn.button("option", { label: "Update", "icons": { primary: "ui-icon-check" } })
+                .unbind("click")
+                .click(function (evt) {
+                    evt.preventDefault();
+                    return update(rowIndx, $grid);
+                });
+            $btn.next().button("option", { label: "Cancel", "icons": { primary: "ui-icon-cancel" } })
+                .unbind("click")
+                .click(function (evt) {
+                    $grid.pqGrid("quitEditMode")
+                        .pqGrid("removeClass", { rowIndx: rowIndx, cls: 'pq-row-edit' })
+                        .pqGrid("rollback");
+                });
+        }
+        //called by update button.
+        function update(rowIndx, $grid) {
+            //debugger
+            var grid = $grid.pqGrid('getInstance').grid;
+            if (grid.saveEditCell() == false) {
+                return false;
+            }
+
+            var isValid = grid.isValid({ rowIndx: rowIndx }).valid;
+            if (!isValid) {
+                return false;
+            }
+
+            if (grid.isDirty()) {
+                var url,
+                    rowData = grid.getRowData({ rowIndx: rowIndx }),
+                    recIndx = grid.option("dataModel.recIndx"),
+                    type;
+
+                grid.removeClass({ rowIndx: rowIndx, cls: 'pq-row-edit' });
+
+                if (rowData[recIndx] == null) {
+                    //add record.
+                    type = 'add';
+
+                    url = "/Demand/add";
+
+                    //url = "/pro/products/add"; //ASP.NET, java
+                    //url = "/pro/products.php?pq_add=1"; //for PHP
+                }
+                else {
+                    //update record.
+                    type = 'update';
+                    url = "/Demand/update";
+                    //url = "/pro/products/update"; //ASP.NET, java
+                    //url = "/pro/products.php?pq_update=1"; //for PHP
+                }
+                $.ajax($.extend({}, ajaxObj, {
+                    context: $grid,
+                    url: url,
+                    data: rowData,
+                    success: function (response) {
+                        if (type == 'add') {
+                            rowData[recIndx] = response.recId;
+                        }
+                        //debugger;
+                        grid.commit({ type: type, rows: [rowData] });
+                        grid.refreshRow({ rowIndx: rowIndx });
+                    }
+                }));
+            }
+            else {
+                grid.quitEditMode();
+                grid.removeClass({ rowIndx: rowIndx, cls: 'pq-row-edit' });
+                grid.refreshRow({ rowIndx: rowIndx });
+            }
+        }
+        //define the grid.
+        var obj = {
+            wrap: false,
+            hwrap: false,
+            resizable: true,
+            columnBorders: false,
+            numberCell: { show: false },
+            track: true, //to turn on the track changes.
+            flexHeight: true,
+            toolbar: {
+                items: [
+                    {
+                        type: 'button', icon: 'ui-icon-plus', label: 'Create Demand', listener:
+                          {
+                              "click": function (evt, ui) {
+                                  var $grid = $(this).closest('.pq-grid');
+                                  addRow($grid);
+                              }
+                          }
+                    }
+                ]
+            },
+            scrollModel: {
+                autoFit: true
+            },
+            selectionModel: {
+                type: 'cell'
+            },
+            //hoverMode: 'cell',
+            editModel: {
+                saveKey: $.ui.keyCode.ENTER,
+                onSave: 'next'
+            },
+            editor: { type: 'textbox', select: true, style: 'outline:none;' },
+            validation: {
+                icon: 'ui-icon-info'
+            },
+            title: "<b>Demand Sheet</b>",
+
+            
+
+            colModel: [
+                    { title: "Sl. No.", dataType: "integer", dataIndx: "serialNo", editable: false, width: 50 },
+
+                    {
+                        title: "Item Name", dataIndx: "itemId", width: 90,
+                        editor: {
+                            type: "textbox",
+                            init: vGetItemList // Method calling
+                        }
+                    },
+
+                    {
+                        title: "Quantity", width: 100, dataType: "int", align: "right", dataIndx: "demandQty",
+                        validations: [{ type: 'gt', value: 1, msg: "should be > 1" }],
+                        render: function (ui) {
+                            return (ui.cellData != null) ? +parseInt(ui.cellData).toFixed(2) : "";
+                        }
+                    },
+
+                    {
+                        title: "Unit", dataIndx: "unitId", align: "right", width: 90,
+                        editor: {
+                            type: "textbox",
+                            init: vGetUnitList // Method calling
+                        }
+                    },
+                    
+                    {
+                        title: "Customer", dataIndx: "supplierId", align: "right", width: 90,
+                        editor: {
+                            type: "textbox",
+                            init: vGetSupplierList // Method calling
+                        }
+                    },
+                    {
+                        title: "", editable: false, minWidth: 165, sortable: false, render: function (ui) {
+                            return "<button type='button' class='edit_btn'>Edit</button>\
+                            <button type='button' class='delete_btn'>Delete</button>";
+                        }
+                    }
+            ],
+            dataModel: {
+            //    dataType: "JSON",
+            //    location: "remote",
+            //    recIndx: "id",
+            //    url: "/Demand/getP",
+            //    //url: "/pro/products/getP",
+            //    //url: "/pro/products.php",//for PHP
+            //    getData: function (response) {
+            //        return { data: response.data, curPage: response.curPage, totalRecords: response.totalRecords };
+            //    }
+            },
+            pageModel: { type: "remote" },
+            //make rows editable selectively.
+            editable: function (ui) {
+                var $grid = $(this);
+                var rowIndx = ui.rowIndx;
+                if ($grid.pqGrid("hasClass", { rowIndx: rowIndx, cls: 'pq-row-edit' }) == true) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            },
+            create: function (evt, ui) {
+                $(this).pqTooltip();
+            }
+        };
+        var $grid = $("#grid_editing").pqGrid(obj);
+
+        //check the changes in grid before navigating to another page or refresh data.
+        $grid.find(".pq-pager").on("pqpagerbeforechange pqpagerbeforerefresh", function (evt, ui) {
+            if ($grid.pqGrid('isDirty')) {
+                var ans = window.confirm("There are unsaved changes. Are you sure?");
+                if (!ans) {
+                    return false;
+                }
+            }
+        });
+        //use refresh & refreshRow events to display jQueryUI buttons and bind events.
+        $grid.on('pqgridrefresh pqgridrefreshrow', function () {
+            var $grid = $(this);
+
+            //delete button
+            $grid.find("button.delete_btn").button({ icons: { primary: 'ui-icon-close' } })
+            .unbind("click")
+            .bind("click", function (evt) {
+                if (isEditing($grid)) {
+                    return false;
+                }
+                var $tr = $(this).closest("tr"),
+                    rowIndx = $grid.pqGrid("getRowIndx", { $tr: $tr }).rowIndx;
+                deleteRow(rowIndx, $grid);
+            });
+            //edit button
+            $grid.find("button.edit_btn").button({ icons: { primary: 'ui-icon-pencil' } })
+            .unbind("click")
+            .bind("click", function (evt) {
+                if (isEditing($grid)) {
+                    return false;
+                }
+                var $tr = $(this).closest("tr"),
+                    rowIndx = $grid.pqGrid("getRowIndx", { $tr: $tr }).rowIndx;
+                editRow(rowIndx, $grid);
+                return false;
+            });
+
+            //rows which were in edit mode before refresh, put them in edit mode again.
+            var rows = $grid.pqGrid("getRowsByClass", { cls: 'pq-row-edit' });
+            if (rows.length > 0) {
+                var rowIndx = rows[0].rowIndx;
+                editRow(rowIndx, $grid);
+            }
+        });
+    });
+
+
+</script>
+
+<body>
+
+    <div id="grid_editing" style="margin: auto;">
+    </div>
+
+</body>
+<div style="padding:10px; border:1px solid black">
+    <div><a href="@Url.Action("Report",new {id= "PDF"})"> Get Report PDF</a></div>
+    <div><a href="@Url.Action("Report",new {id= "Excel"})"> Get Report Excel</a></div>
+    <div><a href="@Url.Action("Report",new {id= "Word"})"> Get Report Word</a></div>
+    <div><a href="@Url.Action("Report",new {id= "Image"})"> Get Report Image</a></div>
+</div>

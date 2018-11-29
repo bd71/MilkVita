@@ -1,0 +1,144 @@
+﻿@model IEnumerable<MilkVitaOrganization.Models.tbl_Issue>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Issue</h2><br />
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".myLink").click(function () {
+                var val = $(this).data("id")
+                if (confirm("Are you sure you want to delete this?")) {
+
+                    $.ajax({
+                        url: '@Url.Action("DeleteConfirmed", "Issue")',
+                        dataType: "json",
+                        type: "POST",
+                        cache: false,
+                        data: { Id: val },
+                        success: function (data) {
+                            if (data.result) {
+                                alert(data.result);
+                            }
+                        },
+                        error: function (xhr) {
+                            alert(xhr.responseText);
+                        }
+                    });
+
+                }
+                else {
+                    return false;
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.issueQty)
+        </th>
+        <th>
+           Date & Time
+        </th>
+        <th>
+           Calan No.
+        </th>
+        <th>
+           Brand
+        </th>
+        <th>
+           Color
+        </th>
+        <th>
+            Demand No.
+        </th>
+        <th>
+            Demand Qty
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+           Item
+        </th>
+        <th>
+           Price
+        </th>
+        <th>
+           GRN
+        </th>
+        <th>
+           Receive Qty
+        </th>
+        <th>
+           Unit
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.issueQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calanNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Brand.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Color.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Demand.demandNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Demand1.demandQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Department.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_ItemMaster.code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Price.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Receive.GRN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Receive1.receiveQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Unit.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "myLink", data_id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

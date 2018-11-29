@@ -1,0 +1,129 @@
+﻿@model MilkVitaOrganization.Models.tbl_Issue
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Issue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.issueQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issueQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.calanNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.calanNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Brand.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Brand.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Color.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Color.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Demand.demandNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Demand.demandNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Demand1.demandNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Demand1.demandNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Department.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Department.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_ItemMaster.code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_ItemMaster.code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Price.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Price.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Receive.receiveNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Receive.receiveNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Receive1.receiveNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Receive1.receiveNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Unit.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Unit.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" style="background-color:#8d0d82; color:white" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,136 @@
+﻿@model MilkVitaOrganization.Models.tbl_Issue
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Issue</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GRN, "GRN", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("GRN", String.Empty)
+                @Html.ValidationMessageFor(model => model.GRN)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.demandNo, "Demand No.", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("demandNo", null, "Select Demand No", String.Empty)
+                @Html.ValidationMessageFor(model => model.demandNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.itemId, "Item", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("itemId", null, "Select Item", String.Empty)
+                @Html.ValidationMessageFor(model => model.itemId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.brandId, "Brand", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("brandId", null, "Select Brand", String.Empty)
+                @Html.ValidationMessageFor(model => model.brandId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.colorId, "Color", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("colorId", null, "Select Color", String.Empty)
+                @Html.ValidationMessageFor(model => model.colorId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.demandQty, "Demand Qty", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("demandQty", null, "Select Demand Qty", String.Empty)
+                @Html.ValidationMessageFor(model => model.demandQty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.receiveQty, "Receive Qty", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("receiveQty", null, "Select Receive Qty", String.Empty)
+                @Html.ValidationMessageFor(model => model.receiveQty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.issueQty, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.issueQty)
+                @Html.ValidationMessageFor(model => model.issueQty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.unitId, "Unit", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("unitId", null, "Select Unit", String.Empty)
+                @Html.ValidationMessageFor(model => model.unitId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.priceId, "Price", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("priceId", null, "Select Price", String.Empty)
+                @Html.ValidationMessageFor(model => model.priceId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.departmentId, "Department", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("departmentId", null, "Select Department", String.Empty)
+                @Html.ValidationMessageFor(model => model.departmentId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dateTime, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateTime)
+                @Html.ValidationMessageFor(model => model.dateTime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.calanNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.calanNo)
+                @Html.ValidationMessageFor(model => model.calanNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" style="background-color:#8d0d82; color:white" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

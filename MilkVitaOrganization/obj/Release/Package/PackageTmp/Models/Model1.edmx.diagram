@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c511a775bd34669a241fa46afc74d14" Name="Diagram1">
+        <EntityTypeShape EntityType="MilkVitaModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_ShopList" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_VanDriverList" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_ZoneList" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_ZoneOfficerList" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_ZoneSuperVisor" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_VanDriverList_tbl_ZoneList" ManuallyRouted="false" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_ZoneSuperVisor_tbl_VanDriverList" ManuallyRouted="false" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_ZoneSuperVisor_tbl_ZoneList" ManuallyRouted="false" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_ZoneSuperVisor_tbl_ZoneOfficerList" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Registration" Width="1.5" PointX="5.375" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Brand" Width="1.5" PointX="7.375" PointY="22.25" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Category" Width="1.5" PointX="5.125" PointY="25.75" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Color" Width="1.5" PointX="7.375" PointY="11.25" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Customer" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Demand" Width="1.5" PointX="9.625" PointY="13.25" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Department" Width="1.5" PointX="14.875" PointY="10.75" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Issue" Width="1.5" PointX="17.125" PointY="12.75" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_ItemMaster" Width="1.5" PointX="7.375" PointY="25.125" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Price" Width="1.5" PointX="12.625" PointY="14.375" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Receive" Width="1.5" PointX="14.875" PointY="13.25" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Supplier" Width="1.5" PointX="7.375" PointY="18.125" />
+        <EntityTypeShape EntityType="MilkVitaModel.tbl_Unit" Width="1.5" PointX="7.375" PointY="14.25" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Demand_tbl_Brand" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Brand" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_ItemMaster_tbl_Brand" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Receive_tbl_Brand" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Category_tbl_Category" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_ItemMaster_tbl_Category" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Demand_tbl_Color" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Color" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_ItemMaster_tbl_Color" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Receive_tbl_Color" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Demand_tbl_ItemMaster" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Demand_tbl_Supplier" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Demand_tbl_Unit" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Demand" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Demand1" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Receive_tbl_Demand" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Department" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_ItemMaster" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Price" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Receive" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Receive1" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Issue_tbl_Unit" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Price_tbl_ItemMaster" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Receive_tbl_ItemMaster" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Price_tbl_Unit" />
+        <AssociationConnector Association="MilkVitaModel.FK_tbl_Receive_tbl_Unit" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

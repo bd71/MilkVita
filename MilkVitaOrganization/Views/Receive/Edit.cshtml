@@ -1,0 +1,113 @@
+﻿@model MilkVitaOrganization.Models.tbl_Receive
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>Receive</h2><br />
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.receiveNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.receiveNo)
+                @Html.ValidationMessageFor(model => model.receiveNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GRN, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GRN)
+                @Html.ValidationMessageFor(model => model.GRN)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.serialNo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.serialNo)
+                @Html.ValidationMessageFor(model => model.serialNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemId, "Item", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ItemId", null, "Select Item", String.Empty)
+                @Html.ValidationMessageFor(model => model.ItemId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.brandId, "Brand", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("brandId", null, "Select Brand", String.Empty)
+                @Html.ValidationMessageFor(model => model.brandId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.colorId, "Color", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("colorId", null, "Select Color", String.Empty)
+                @Html.ValidationMessageFor(model => model.colorId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dateTime, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateTime)
+                @Html.ValidationMessageFor(model => model.dateTime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.demandId, "Demand Id", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("demandId", null, "Select DemandId", String.Empty)
+                @Html.ValidationMessageFor(model => model.demandId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.receiveQty, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.receiveQty)
+                @Html.ValidationMessageFor(model => model.receiveQty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.unitId, "Unit", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("unitId", null, "Select Unit", String.Empty)
+                @Html.ValidationMessageFor(model => model.unitId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" style="background-color:#8d0d82; color:white" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

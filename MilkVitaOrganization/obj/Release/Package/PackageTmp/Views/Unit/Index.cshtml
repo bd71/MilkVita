@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MilkVitaOrganization.Models.tbl_Unit>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        function DeleteItem(id) {
+            var val = id;
+            if (confirm("Are you sure you want to delete this?")) {
+
+                $.ajax({
+                    url: '@Url.Action("DeleteConfirmed", "Unit")',
+                    dataType: "json",
+                    type: "POST",
+                    cache: false,
+                    data: { Id: val },
+                    success: function (data) {
+                        if (data.result) {
+                            alert(data.result);
+                            // Perform redirect
+                            window.location.replace('@Url.Action("Index", "Unit")');
+                        }
+                    },
+                    error: function (xhr) {
+                        alert(xhr.responseText);
+                    }
+                });
+
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</head>
+<h2>UNIT</h2><br />
+<p>
+    <button type="button" style="background-color:#8d0d82; border:none; color:white" onclick="location.href='@Url.Action("Create", "Unit")'" class="btn btn-default">Create New</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Unit Name
+        </th>
+        <th>
+            Short Code
+        </th>
+        <th>
+            Convert Parameter
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shortCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.convertParameter)
+        </td>
+        <td>
+            <input type="button" style="background-color:#8d0d82; border:none; color:white" value="Edit" onclick="location.href='@Url.Action("Edit", "Unit", new { id = item.id })'" />
+            <input type="button" style="background-color:#8d0d82; border:none; color:white" value="Details" onclick="location.href='@Url.Action("Details", "Unit", new { id = item.id })'" />
+            <input type="button" style="background-color:#8d0d82; border:none; color:white" value="Delete" onclick="DeleteItem(@item.id)" />
+        </td>
+    </tr>
+}
+
+</table>

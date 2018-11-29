@@ -1,0 +1,41 @@
+﻿@model MilkVitaOrganization.Models.tbl_Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Category</h2><br />
+
+<div>
+    <h4>Category</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+           Sub Category 
+        </dt>
+
+        <dd>
+           @Html.DisplayFor(model => model.tbl_Category2.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "Category")'" class="btn btn-default">Cancel</button>
+</p>

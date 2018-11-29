@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MilkVitaModelStoreContainer" CdmEntityContainer="MilkVitaEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MilkVitaModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ShopList">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_ShopList">
+        <MappingFragment StoreEntitySet="tbl_ShopList">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_VanDriverList">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_VanDriverList">
+        <MappingFragment StoreEntitySet="tbl_VanDriverList">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="zoneId" ColumnName="zoneId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZoneList">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_ZoneList">
+        <MappingFragment StoreEntitySet="tbl_ZoneList">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="codeNo" ColumnName="codeNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZoneOfficerList">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_ZoneOfficerList">
+        <MappingFragment StoreEntitySet="tbl_ZoneOfficerList">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="officersId" ColumnName="officersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ZoneSuperVisor">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_ZoneSuperVisor">
+        <MappingFragment StoreEntitySet="tbl_ZoneSuperVisor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="empIdNo" ColumnName="empIdNo" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="zoneId" ColumnName="zoneId" />
+          <ScalarProperty Name="zoneOfficerId" ColumnName="zoneOfficerId" />
+          <ScalarProperty Name="vanDriverId" ColumnName="vanDriverId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MilkVitaModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MilkVitaModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MilkVitaModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MilkVitaModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MilkVitaModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MilkVitaModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MilkVitaModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MilkVitaModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MilkVitaModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="tbl_Registration">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Registration">
+        <MappingFragment StoreEntitySet="tbl_Registration">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="registrationDate" ColumnName="registrationDate" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Brand">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Brand">
+        <MappingFragment StoreEntitySet="tbl_Brand">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Category">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Category">
+        <MappingFragment StoreEntitySet="tbl_Category">
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Color">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Color">
+        <MappingFragment StoreEntitySet="tbl_Color">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Customer">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Customer">
+        <MappingFragment StoreEntitySet="tbl_Customer">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Demand">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Demand">
+        <MappingFragment StoreEntitySet="tbl_Demand">
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="unitId" ColumnName="unitId" />
+          <ScalarProperty Name="demandQty" ColumnName="demandQty" />
+          <ScalarProperty Name="supplierId" ColumnName="supplierId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="colorId" ColumnName="colorId" />
+          <ScalarProperty Name="itemId" ColumnName="itemId" />
+          <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+          <ScalarProperty Name="demandNo" ColumnName="demandNo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Department">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Department">
+        <MappingFragment StoreEntitySet="tbl_Department">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Issue">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Issue">
+        <MappingFragment StoreEntitySet="tbl_Issue">
+          <ScalarProperty Name="calanNo" ColumnName="calanNo" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="priceId" ColumnName="priceId" />
+          <ScalarProperty Name="unitId" ColumnName="unitId" />
+          <ScalarProperty Name="issueQty" ColumnName="issueQty" />
+          <ScalarProperty Name="receiveQty" ColumnName="receiveQty" />
+          <ScalarProperty Name="demandQty" ColumnName="demandQty" />
+          <ScalarProperty Name="colorId" ColumnName="colorId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="itemId" ColumnName="itemId" />
+          <ScalarProperty Name="demandNo" ColumnName="demandNo" />
+          <ScalarProperty Name="GRN" ColumnName="GRN" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ItemMaster">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_ItemMaster">
+        <MappingFragment StoreEntitySet="tbl_ItemMaster">
+          <ScalarProperty Name="barCode" ColumnName="barCode" />
+          <ScalarProperty Name="colorId" ColumnName="colorId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Price">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Price">
+        <MappingFragment StoreEntitySet="tbl_Price">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="itemMasterId" ColumnName="itemMasterId" />
+          <ScalarProperty Name="unitId" ColumnName="unitId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Receive">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Receive">
+        <MappingFragment StoreEntitySet="tbl_Receive">
+          <ScalarProperty Name="unitId" ColumnName="unitId" />
+          <ScalarProperty Name="receiveQty" ColumnName="receiveQty" />
+          <ScalarProperty Name="demandId" ColumnName="demandId" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="colorId" ColumnName="colorId" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+          <ScalarProperty Name="GRN" ColumnName="GRN" />
+          <ScalarProperty Name="receiveNo" ColumnName="receiveNo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Supplier">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Supplier">
+        <MappingFragment StoreEntitySet="tbl_Supplier">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Unit">
+      <EntityTypeMapping TypeName="MilkVitaModel.tbl_Unit">
+        <MappingFragment StoreEntitySet="tbl_Unit">
+          <ScalarProperty Name="convertParameter" ColumnName="convertParameter" />
+          <ScalarProperty Name="shortCode" ColumnName="shortCode" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

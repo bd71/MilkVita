@@ -1,0 +1,64 @@
+﻿@model MilkVitaOrganization.Models.tbl_ItemMaster
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Item Details</h2><br />
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.barCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.barCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Brand.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Brand.name)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Category.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Category.name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.tbl_Color.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Color.name)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    <button type="button" style="background-color: #8d0d82; border: none; color: white" onclick="location.href='@Url.Action("Index", "ItemMaster")'" class="btn btn-default">Cancel</button>
+</p>
